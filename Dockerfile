@@ -18,5 +18,7 @@ RUN cd swtpm                                                &&\
 
 FROM alpine
 
-RUN apk add --no-cache fuse glib libseccomp gnutls libtasn1
+RUN apk add --no-cache fuse glib libseccomp gnutls libtasn1 bash
+RUN adduser -D tss
+
 COPY --from=build /usr/local /usr/local
